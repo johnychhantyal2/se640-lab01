@@ -3,7 +3,7 @@
 class CPassword:
     def __init__(self):
         self.input = input('Please enter the password: ')
-        self.length = character(self.input)
+        self.character = character(self.input)
         self.lower = lower(self.input)
         self.upper = upper(self.input)
         self.digit = digit(self.input)
@@ -51,19 +51,18 @@ def special(password):
 
 # Main function
 def main():
-    stillTrying = True
+    isTrying = True
 
-    while stillTrying:
+    while isTrying:
         password = CPassword()
         validPassword = True
-
-        if not password.length or not password.lower or not password.upper or not password.digit or not password.special:
+        if (not password.character) or (not password.lower) or (not password.upper) or (not password.digit) or (not password.special):
             validPassword = False
             print('Invalid password. Please try again...')
 
         if validPassword:
             print('Valid password')
-            stillTrying = False
+            isTrying = False
 
 if __name__ == "__main__":
     main()
